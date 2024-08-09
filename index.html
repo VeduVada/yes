@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Detection</title>
+    <script>
+        // device-detection.js
+function getDeviceInfo() {
+    const userAgent = navigator.userAgent;
+
+    if (/iPhone|iPad|iPod/i.test(userAgent)) {
+        return 'iOS device';
+    } else if (/Android/i.test(userAgent)) {
+        return 'Android device';
+    } else if (/Windows/i.test(userAgent)) {
+        return 'Windows device';
+    } else {
+        return 'Other device';
+    }
+}
+
+// Update the webpage with device information
+document.addEventListener('DOMContentLoaded', () => {
+    const deviceInfo = getDeviceInfo();
+    document.getElementById('device-info').textContent = deviceInfo;
+});
+
+    </script>
+</head>
+<body>
+    <h1>Device Detection</h1>
+    <p>Your device type is: <span id="device-info">Loading...</span></p>
+</body>
+</html>
